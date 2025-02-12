@@ -7,7 +7,7 @@ export default function insertScriptAndCSS() {
       return console.log(err)
     }
 
-    console.log('Archivo guardado')
+    console.log('index.html Generado :)');
   })
 
   readFile('index.html', 'utf8', (err, data) => {
@@ -24,8 +24,6 @@ export default function insertScriptAndCSS() {
     writeFile('build/index.html', $.html(), (err) => {
       if (err) {
         console.error(err)
-      } else {
-        console.log('Archivo generado :)')
       }
     })
   })

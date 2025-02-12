@@ -9,8 +9,7 @@ export default async function configPaket(): Promise<PaketConfig | undefined> {
   let config: PaketConfig | undefined
 
   try {
-    config = (await import(configURL)).default // Importa el módulo y accede a .default
-    console.log(config)
+    config = (await import(configURL)).default
   } catch (error) {
     if (error instanceof Error) {
       console.error(`Error al cargar la configuración: ${error.message}`)

@@ -1,19 +1,18 @@
 import {watch} from 'chokidar'
-import {exec} from 'node:child_process'
 
-export default function watcherSource() {
+import build from './build.js'
+import configPaket from './config.packet.js'
+
+export default async function watcherSource() {
   const watcher = watch('./src', {ignored: /node_modules/, persistent: true})
-  
+  const paketConfig = await configPaket()
+
   watcher.on('change', (path) => {
     console.log(`Archivo cambiado: ${path}`)
-    exec('npm run build', (err, stdout, stderr) => {
-      if (err) {
-        console.error(`Error durante la compilación: ${stderr}`)
-        return
-      }
-  
-      console.log(stdout)
-    })
+    if (paketConfig?.js.frameworks === undefined) {
+      console.error('Error al cargar al elegir el framework')
+    } else {
+      build(paketConfig?.js.frameworks)
+    }
   })
 }
-

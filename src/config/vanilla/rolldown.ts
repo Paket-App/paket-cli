@@ -1,16 +1,14 @@
-import {build} from 'rolldown'
-
-import configPaket from '../config.packet.js'
+import {rolldown} from 'rolldown'
 
 export default async function bundlerRollup() {
-  const paketConfig = await configPaket()
-
-  await build({
+  const bundle = await rolldown({
+    external: [],
     input: 'src/index.js',
-    output: {
-      dir: paketConfig?.output.path,
-      format: 'umd',
-      inlineDynamicImports: true,
-    },
+  })
+
+  await bundle.write({
+    dir: 'build/',
+    format: 'umd',
+    inlineDynamicImports: true,
   })
 }

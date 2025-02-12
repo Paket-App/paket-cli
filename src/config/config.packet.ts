@@ -1,7 +1,7 @@
 import path from 'node:path'
 import {pathToFileURL} from 'node:url'
 
-import { PaketConfig } from '../types/config.js'
+import {PaketConfig} from '../types/config.js'
 
 export default async function configPaket(): Promise<PaketConfig | undefined> {
   const configPath = path.resolve(process.cwd(), 'paket.config.js')
@@ -9,12 +9,13 @@ export default async function configPaket(): Promise<PaketConfig | undefined> {
   let config: PaketConfig | undefined
 
   try {
-    config = await import(configURL)
+    config = (await import(configURL)).default // Importa el módulo y accede a .default
+    console.log(config)
   } catch (error) {
     if (error instanceof Error) {
       console.error(`Error al cargar la configuración: ${error.message}`)
     } else {
-      console.error('Error al cargar la configuración: Error desconocido')      
+      console.error('Error al cargar la configuración: Error desconocido')
     }
   }
 

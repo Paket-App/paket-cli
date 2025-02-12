@@ -40,7 +40,7 @@ const config = {
   output: {
     filename: "bundle.js",            // Nombre del archivo JS resultante.
     html: "index.html",               // Nombre del archivo HTML final.
-    path: "./dist",                   // Carpeta donde se guardará el build.
+    path: "./build",                   // Carpeta donde se guardará el build.
   },
   // =============================
   // 7. Plugins

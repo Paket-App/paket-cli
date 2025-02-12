@@ -1,3 +1,4 @@
+import insertScriptAndCSS from "./insert-scripts.js";
 import bundlerRollup from "./vanilla/rolldown.js";
 import transformCodeSWC from "./vanilla/swc.js";
 
@@ -7,6 +8,7 @@ export default function build(framework: 'react' | 'svelte' | 'vanilla' | 'vue')
     case "vanilla": {
       bundlerRollup()
       transformCodeSWC()
+      insertScriptAndCSS()
       break;
     }
   

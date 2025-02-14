@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import "./index.css"
 
 const animationBox = document.querySelector('.animation-box');
@@ -33,7 +34,7 @@ function createConfetti() {
     confetti.style.top = '-10px';
     confetti.style.borderRadius = '50%';
     confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
-    document.body.appendChild(confetti);
+    document.body.append(confetti);
 
     setTimeout(() => confetti.remove(), 5000);
   }
@@ -47,4 +48,4 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style);
+document.head.append(style);

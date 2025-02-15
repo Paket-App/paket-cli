@@ -1,7 +1,4 @@
 // paket.config.js
-// @ts-check
-// Importa la definición de tipos (requiere TypeScript para que funcione el autocompletado y la verificación de tipos).
-/** @type {import('./src/types/config').PaketConfig} */
 const config = {
   // =============================
   // 4. Configuración para CSS
@@ -40,15 +37,12 @@ const config = {
   output: {
     filename: "bundle.js",            // Nombre del archivo JS resultante.
     html: "index.html",               // Nombre del archivo HTML final.
-    path: "./build",                   // Carpeta donde se guardará el build.
+    path: "./build",                  // Carpeta donde se guardará el build.
   },
   // =============================
   // 7. Plugins
   // =============================
-  plugins: [
-    // Puedes agregar plugins personalizados aquí.
-    // require('paket-plugin-imagenes')({ quality: 80 })
-  ],
+  plugins: [],                        // Proximamente
 };
 
 export default config;

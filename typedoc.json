@@ -1,0 +1,7 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "out": "docs/internal-cli/",
+  "entryPointStrategy": "expand",
+  "entryPoints": ["src"]
+  
+}

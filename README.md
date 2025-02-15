@@ -15,7 +15,7 @@ CLI para construir proyectos con paket :)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
-```sh-session
+```bash
 $ npm install -g paket-cli
 $ paket COMMAND
 running command...

@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 
 import configDefault from '../config/paket-config-default.js'
 import { crearArchivo, crearDirectorio } from './interacion-sistema.js'
+import { cargarConfiguracion } from '../config/cargar-configuracion.js'
 
 /**
  * Verifica y corrige la estructura del proyecto asegurando la existencia
@@ -20,7 +21,9 @@ import { crearArchivo, crearDirectorio } from './interacion-sistema.js'
  *
  * @throws {Error} Si ocurre un problema al crear archivos o directorios necesarios.
  */
-export function verificarEstructuraProyecto(): void {
+export async function verificarEstructuraProyecto(): Promise<void> {
+  const configuracion = await cargarConfiguracion()
+
   try {
     verificarArchivoConfig()
   } catch {
@@ -28,7 +31,7 @@ export function verificarEstructuraProyecto(): void {
   }
 
   try {
-    verificarDirectorio('public')
+    verificarDirectorio(configuracion.output.path)
   } catch {
     console.error('Ocurrio un error inesperado')
   }
@@ -48,6 +51,7 @@ export function verificarEstructuraProyecto(): void {
 export function verificarArchivoConfig() {
   access(resolve(process.cwd(), 'paket.config.js'), constants.F_OK, (error) => {
     if (error) {
+      console.log('Error');
       crearArchivo('paket.config.js', JSON.stringify(configDefault))
     }
   })

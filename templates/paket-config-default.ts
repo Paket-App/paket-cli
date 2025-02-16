@@ -1,10 +1,19 @@
 const configDefault = {
-  css: {inline: true, minify: false, preprocessor: 'sass'},
+  css: {
+    inline: false,
+    minify: true,
+  },
   entry: './index.html',
-  html: {template: './src/template.html'},
-  js: {externals: [], frameworks: 'vanilla', minify: true, transpile: true},
-  output: {filename: 'bundle.js', html: 'index.html', path: './build'},
-  plugins: [],
+  js: {
+    frameworks: 'vanilla',
+    minify: true,
+    transpile: true,
+  },
+  output: {
+    filename: 'bundle.js',
+    html: 'index.html',
+    path: './dist',
+  },
 }
 
 export default configDefault

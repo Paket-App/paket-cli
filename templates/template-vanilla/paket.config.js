@@ -4,7 +4,6 @@ const config = {
   },
   entry: "./index.html",
   js: {
-    frameworks: 'vanilla',
     minify: true,
     transpile: true
   },

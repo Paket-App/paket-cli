@@ -5,7 +5,6 @@ export type PaketConfig = {
   }
   entry: string
   js: {
-    frameworks: 'react' | 'svelte' | 'vanilla' | 'vue'
     minify: boolean
     transpile: boolean
   }

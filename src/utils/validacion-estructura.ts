@@ -1,8 +1,8 @@
-import {access, constants, stat} from 'node:fs'
-import {resolve} from 'node:path'
+import { access, constants, stat } from 'node:fs'
+import { resolve } from 'node:path'
 
-import configDefault from '../templates/paket-config-default.js'
-import {crearArchivo, crearDirectorio} from './interacion-sistema.js'
+import configDefault from '../config/paket-config-default.js'
+import { crearArchivo, crearDirectorio } from './interacion-sistema.js'
 
 /**
  * Verifica y corrige la estructura del proyecto asegurando la existencia

@@ -1,5 +1,5 @@
-import {mkdirSync, unlink, unlinkSync, writeFile} from 'node:fs'
-import {resolve} from 'node:path'
+import { mkdirSync, unlinkSync, writeFile } from 'node:fs'
+import { resolve } from 'node:path'
 
 /**
  * Crea un archivo en una ruta específica a partir de la raíz del proyecto.

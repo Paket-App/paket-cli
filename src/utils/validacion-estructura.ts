@@ -1,9 +1,9 @@
 import { access, constants, stat } from 'node:fs'
 import { resolve } from 'node:path'
 
+import { cargarConfiguracion } from '../config/cargar-configuracion.js'
 import configDefault from '../config/paket-config-default.js'
 import { crearArchivo, crearDirectorio } from './interacion-sistema.js'
-import { cargarConfiguracion } from '../config/cargar-configuracion.js'
 
 /**
  * Verifica y corrige la estructura del proyecto asegurando la existencia

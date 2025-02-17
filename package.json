@@ -1,7 +1,7 @@
 {
   "name": "paket-cli",
   "description": "CLI para construir proyectos con paket :)",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Tuysh",
   "bin": {
     "paket": "./bin/run.js"

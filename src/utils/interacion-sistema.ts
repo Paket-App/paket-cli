@@ -1,4 +1,4 @@
-import {mkdirSync, writeFile} from 'node:fs'
+import {mkdirSync, unlink, unlinkSync, writeFile} from 'node:fs'
 import {resolve} from 'node:path'
 
 /**
@@ -60,4 +60,32 @@ export function crearDirectorio(ruta: string): void {
 
     throw error
   }
+}
+
+
+/**
+ * Elimina un archivo del sistema de archivos de manera síncrona.
+ *
+ * Esta función utiliza el método `unlinkSync` de Node.js para eliminar un archivo
+ * de manera inmediata y bloqueante. Si el archivo no existe o no puede ser eliminado,
+ * se lanzará un error.
+ *
+ * @summary Elimina un archivo del sistema de archivos de manera síncrona.
+ *
+ * @example
+ * try {
+ *   borrarArchivo('ruta/del/archivo.txt');
+ *   console.log('Archivo eliminado correctamente');
+ * } catch (error) {
+ *   console.error('No se pudo eliminar el archivo:', error);
+ * }
+ * 
+ * @param {string} ruta - La ruta absoluta o relativa del archivo a eliminar.
+ *
+ * @throws {Error} Lanza un error si el archivo no existe, si hay problemas de permisos
+ * o si no se puede eliminar por cualquier otra razón.
+ *
+ */
+export function borrarArchivo(ruta: string): void {
+  unlinkSync(ruta)
 }

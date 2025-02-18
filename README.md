@@ -34,7 +34,7 @@ $ npm install -g paket-cli
 $ paket COMMAND
 running command...
 $ paket (--version)
-paket-cli/0.0.0 win32-x64 node-v23.5.0
+paket-cli/0.1.1 win32-x64 node-v23.5.0
 $ paket --help [COMMAND]
 USAGE
   $ paket COMMAND
@@ -63,7 +63,7 @@ EXAMPLES
   $ paket build
 ```
 
-_See code: [src/commands/build.ts](https://github.com/Paket-App/paket-cli/blob/v0.0.0/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/Paket-App/paket-cli/blob/v0.1.1/src/commands/build.ts)_
 
 ## `paket create`
 
@@ -80,7 +80,7 @@ EXAMPLES
   $ paket create
 ```
 
-_See code: [src/commands/create.ts](https://github.com/Paket-App/paket-cli/blob/v0.0.0/src/commands/create.ts)_
+_See code: [src/commands/create.ts](https://github.com/Paket-App/paket-cli/blob/v0.1.1/src/commands/create.ts)_
 
 ## `paket help [COMMAND]`
 
@@ -117,5 +117,5 @@ EXAMPLES
   $ paket run
 ```
 
-_See code: [src/commands/run.ts](https://github.com/Paket-App/paket-cli/blob/v0.0.0/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/Paket-App/paket-cli/blob/v0.1.1/src/commands/run.ts)_
 <!-- commandsstop -->

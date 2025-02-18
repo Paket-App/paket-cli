@@ -5,6 +5,7 @@ import {rolldown} from 'rolldown'
 import css from 'rollup-plugin-import-css'
 
 import {PaketConfig} from '../types/paket-config'
+import insertarScriptYCSS from './inserta-html.js'
 import {borrarArchivo} from './interacion-sistema.js'
 
 /**
@@ -128,4 +129,10 @@ export async function generarBundle(configuracion: PaketConfig) {
     configuracion.js.transpile,
   )
   if (configuracion.output.filename !== 'index.js') borrarArchivo(`${configuracion.output.path}/index.js`)
+  // Aunque no es estrictamente del bundle generado lo coloco aquí para más practicidad... Algun dia lo refatorizare
+  await insertarScriptYCSS(
+    configuracion.entry,
+    `${configuracion.output.path}/${configuracion.output.html}`,
+    configuracion.output.filename,
+  )
 }
